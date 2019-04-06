@@ -31,9 +31,20 @@ var privateShoppingKartSecretKey = 'c2hvcHBpbmdfY*2FydF9qc2%9uX3NlY3J!ldF9rZXlfd
 // Connect String with Mongo DB
 //mongodb://localhost/shoppingCart
 //mongodb+srv://shivamvarshney0710:<password>@cluster0-12h6r.mongodb.net/test?retryWrites=true
+
+const MongoClient = require(‘mongodb’).MongoClient;
+const uri = "mongodb+srv://shivamvarshney0710:Classic@982@cluster0-12h6r.mongodb.net/shoppingCart?retryWrites=true";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("shoppingCart").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+/*
 mongoose.connect('mongodb+srv://shivamvarshney0710:Classic@982@cluster0-12h6r.mongodb.net/shoppingCart?retryWrites=true',{
 	userMongoClient :true
-})
+})*/
 // Server connection at PORT 3000
 app.listen('3000',function(){
 	console.log('Magic Happens here');
