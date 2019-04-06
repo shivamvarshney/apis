@@ -41,10 +41,13 @@ var privateShoppingKartSecretKey = 'c2hvcHBpbmdfY*2FydF9qc2%9uX3NlY3J!ldF9rZXlfd
 //   client.close();
 // });
 
+//mongodb+srv://shivamvarshney0710:<password>@cluster0-12h6r.mongodb.net/shoppingCart?retryWrites=true
 /*
 mongoose.connect('mongodb+srv://shivamvarshney0710:Classic@982@cluster0-12h6r.mongodb.net/shoppingCart?retryWrites=true',{
 	userMongoClient :true
 })*/
+mongoose.connect('mongodb+srv://shivamvarshney0710:Classic@982@cluster0-12h6r.mongodb.net/shoppingCart?retryWrites=true', {useNewUrlParser: true});
+
 // Server connection at PORT 3000
 var port = process.env.PORT || 3000
 app.listen(port,function(){
